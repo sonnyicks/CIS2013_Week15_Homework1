@@ -48,7 +48,14 @@ void Card::draw(){
 	}
 		drawn++;
 		repeat=true;
-	}
+}
+
+int Card::get_score(int &a){
+	a=score;
+	score=0;
+}
+	
+
 	
 
 

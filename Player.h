@@ -23,6 +23,8 @@ class Player{
 		
 		int set_score(int);
 		
+		int get_score();
+		
 		bool set_hitting(char);
 		
 		void play_card(string);

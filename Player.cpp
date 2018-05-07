@@ -30,6 +30,10 @@ int Player::set_score(int a){
 	pscore+=a;
 }
 
+int Player::get_score(){
+	return pscore;
+}
+
 bool Player::set_hitting(char hs){
 	bool valid=false;
 	while (!valid){

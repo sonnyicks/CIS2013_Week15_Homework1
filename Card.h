@@ -21,6 +21,8 @@ class Card{
 		void initialize();
 		
 		void draw();
+		
+		int get_score(int&);
 	
 	
 
