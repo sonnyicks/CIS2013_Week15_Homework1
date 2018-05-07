@@ -21,17 +21,16 @@ void Card::initialize(){
 }
 
 void Card::draw(){
-	bool a = true;
 	bool ace = false;
 	srand(time(0));
 	int i=0;
-	int x=0;
-	while (x<30){
+	bool repeat=true;
+	while(repeat){
 		int face = rand()%52;
+	
 		if (deck[face]!="XX"){
 			cout << deck[face] << ", ";
-			is_used[i]=deck[face];
-			i++;
+			is_used[drawn]=deck[face];
 			deck[face]="XX";
 			score+=weight[face%13];
 			if ((face%13==0)&&(score < 12)){
@@ -43,12 +42,12 @@ void Card::draw(){
 				ace=false;
 			}
 			cout << score << endl;
+			repeat=false;
 			// score=0; //delete after testing
-			}
-			a=false;
-			x++;
 		}
-		a=true;
+	}
+		drawn++;
+		repeat=true;
 	}
 	
 

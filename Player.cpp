@@ -43,3 +43,16 @@ bool Player::set_hitting(char hs){
 		}
 	}
 }
+
+void Player::play_card (string x){
+	played_cards[numcards]=x;
+	numcards++;
+}
+
+void Player::print_cards(){
+	cout << name << endl;
+	for (int i=0; i<numcards; i++){
+		cout << played_cards[i] << endl;
+	}
+	cout << pscore;
+}

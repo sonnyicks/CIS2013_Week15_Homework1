@@ -13,6 +13,7 @@ class Card{
 		string is_used[52];
 		int score=0;
 		string deck[52];
+		int drawn=0;
 	
 	public:
 		Card();
