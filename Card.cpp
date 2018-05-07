@@ -13,24 +13,40 @@ Card::Card(){
 void Card::initialize(){
 	int count=0;
 	for (int i=0; i<=3; i++){
-		for (int j=0; j<=12; i++){
-			deck[count]=suit[i] + value[j];
+		for (int j=0; j<=12; j++){
+			deck[count]= value[j] + suit[i];
 			count++;
 		}
 	}
 }
 
-string Card::draw(){
+void Card::draw(){
 	bool a = true;
+	bool ace = false;
 	srand(time(0));
-	while (a){
+	int i=0;
+	int x=0;
+	while (x<30){
 		int face = rand()%52;
 		if (deck[face]!="XX"){
-			cout << deck[face] << endl;
+			cout << deck[face] << ", ";
+			is_used[i]=deck[face];
+			i++;
 			deck[face]="XX";
-			score+=weight[face%12];
+			score+=weight[face%13];
+			if ((face%13==0)&&(score < 12)){
+				score+=10;
+				ace=true;
+			}
+			if ((score>21)&&(ace==true)){
+				score-=10;
+				ace=false;
+			}
+			cout << score << endl;
+			// score=0; //delete after testing
 			}
 			a=false;
+			x++;
 		}
 		a=true;
 	}

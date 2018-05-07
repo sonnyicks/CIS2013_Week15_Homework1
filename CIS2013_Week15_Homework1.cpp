@@ -6,7 +6,9 @@ using namespace std;
 
 
 int main(){
-	Card deck;
+	Card start;
+	
+	start.draw();
 
 	return 0;
 }
