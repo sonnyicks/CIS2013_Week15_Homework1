@@ -29,11 +29,10 @@ string Card::draw(){
 		int face = rand()%52;
 	
 		if (deck[face]!="XX"){
-			cout << deck[face] << ", ";
+			cout << deck[face] << endl;
 			is_used[drawn]=deck[face];
 			deck[face]="XX";
 			score+=weight[face%13];
-			cout << score << endl;
 			repeat=false;
 			// score=0; //delete after testing
 		}

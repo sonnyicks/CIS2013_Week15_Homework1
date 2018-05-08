@@ -41,6 +41,7 @@ int main(){
 		two.play_card(crd);
 		two.print_cards();
 	}
+	
 	return 0;
 }
 
@@ -52,15 +53,15 @@ void setup(){
 		one.set_score(scr);
 		one.play_card(crd);
 	}
-	cout << endl;
-	cout << "Dealer is dealt: " << endl;
+	cout << one.get_name() << "'s score: " << one.get_score() << endl;
+	cout << endl << "Dealer is dealt: " << endl;
 	for (int j=0; j<2; j++){
 		crd=start.draw();
 		start.get_score(scr);//Card function changes scr variable
 		two.set_score(scr);
 		two.play_card(crd);
 	}
-	cout << endl;
+	cout << two.get_name() << "'s score: " << two.get_score() << endl;
 }
 //move score from Card to Main to Player
 //organize main to follow order of draw
