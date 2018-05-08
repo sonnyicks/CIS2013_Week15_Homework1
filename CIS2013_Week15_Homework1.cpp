@@ -9,7 +9,6 @@ bool running=true;
 string crd;
 int scr;
 bool plr_turn=true;
-bool dlr_turn=true;
 
 Card start;
 Player one;
@@ -41,7 +40,14 @@ int main(){
 		two.play_card(crd);
 		two.print_cards();
 	}
-	
+	cout << one.get_name() << "'s score is " << one.get_score() << endl;
+	cout << two.get_name() << "'s score is " << two.get_score() << endl;
+	if(two.get_score()>one.get_score()){
+		cout << two.get_name() << " wins...";
+	}
+	else{
+		cout << one.get_name() << " wins!"; 
+	}
 	return 0;
 }
 
@@ -63,6 +69,4 @@ void setup(){
 	}
 	cout << two.get_name() << "'s score: " << two.get_score() << endl;
 }
-//move score from Card to Main to Player
-//organize main to follow order of draw
-//move recent played card to players array
+

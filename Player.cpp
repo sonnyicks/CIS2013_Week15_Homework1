@@ -34,12 +34,14 @@ int Player::set_score(int a){
 		exit(1);
 	}
 	else if ((pscore>21)&&(name=="Dealer")){
-		cout << "Dealer busts, you win!";
+		cout << "Dealer score: " << pscore << endl 
+				 << "Dealer busts, you win!";
 		exit(1);
 	}
 	else if (pscore>21){
 		is_hitting=false;
-		cout << endl << "Busted, you lose...";
+		cout << "Score: " << pscore << endl 
+				 << "Busted, you lose...";
 		exit(1);
 	}
 }
@@ -78,5 +80,5 @@ void Player::print_cards(){
 	for (int i=0; i<numcards; i++){
 		cout << played_cards[i] << endl;
 	}
-	cout << endl << "Current score: " << pscore << endl;
+	cout << "Current score: " << pscore << endl;
 }
