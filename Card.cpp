@@ -33,14 +33,6 @@ string Card::draw(){
 			is_used[drawn]=deck[face];
 			deck[face]="XX";
 			score+=weight[face%13];
-			if ((face%13==0)&&(score < 12)){
-				score+=10;
-				ace=true;
-			}
-			if ((score>21)&&(ace==true)){
-				score-=10;
-				ace=false;
-			}
 			cout << score << endl;
 			repeat=false;
 			// score=0; //delete after testing

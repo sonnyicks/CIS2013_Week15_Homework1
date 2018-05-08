@@ -28,6 +28,15 @@ string Player::get_name(){
 
 int Player::set_score(int a){
 	pscore+=a;
+	if (pscore==21){
+		is_hitting=false;
+		cout << endl << "21, you win!";
+	}
+	else if (pscore>21){
+		is_hitting=false;
+		cout << endl << "Busted, you lose...";
+		exit(1);
+	}
 }
 
 int Player::get_score(){
