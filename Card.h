@@ -20,7 +20,7 @@ class Card{
 		
 		void initialize();
 		
-		void draw();
+		string draw();
 		
 		int get_score(int&);
 	

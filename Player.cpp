@@ -34,18 +34,24 @@ int Player::get_score(){
 	return pscore;
 }
 
-bool Player::set_hitting(char hs){
+bool Player::set_hitting(){
 	bool valid=false;
+	char hs;
 	while (!valid){
 		cout << "Hit or Stay?: ";
 		cin >> hs;
 		if ((hs=='s')||(hs=='S')){
 			is_hitting=false;
+			valid=true;
 		}
 		else if ((hs!='h')&&(hs!='H')){
 			cout << "Invalid entry - choose again" << endl;
 		}
+		else {
+			valid=true;
+		}
 	}
+	return is_hitting;
 }
 
 void Player::play_card (string x){
@@ -54,9 +60,9 @@ void Player::play_card (string x){
 }
 
 void Player::print_cards(){
-	cout << name << endl;
+	cout << endl << name << endl << "Current cards: " << endl;
 	for (int i=0; i<numcards; i++){
 		cout << played_cards[i] << endl;
 	}
-	cout << pscore;
+	cout << endl << "Current score: " << pscore << endl;
 }

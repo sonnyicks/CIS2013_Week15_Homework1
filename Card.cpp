@@ -20,7 +20,7 @@ void Card::initialize(){
 	}
 }
 
-void Card::draw(){
+string Card::draw(){
 	bool ace = false;
 	srand(time(0));
 	int i=0;
@@ -48,6 +48,7 @@ void Card::draw(){
 	}
 		drawn++;
 		repeat=true;
+		return is_used[drawn-1];
 }
 
 int Card::get_score(int &a){

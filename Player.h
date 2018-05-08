@@ -25,7 +25,7 @@ class Player{
 		
 		int get_score();
 		
-		bool set_hitting(char);
+		bool set_hitting();
 		
 		void play_card(string);
 		
